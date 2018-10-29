@@ -1,0 +1,8 @@
+<li class="list-group-item">
+  <div style="width:20px;height:20px;background-color: red;"
+  *ngIf="status === 'occupé(e)'"></div>
+  <div style="width:20px;height:20px;background-color: #278b31;"
+  *ngIf="status === 'disponible'"></div>
+  <h4>Contenu : {{ name }}, est : {{ status }}</h4>
+  <input type="text" class="form-control" [(ngModel)]="name">
+</li>
