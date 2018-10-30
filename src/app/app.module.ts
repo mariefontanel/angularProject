@@ -10,6 +10,7 @@ import { StudentViewComponent } from './student-view/student-view.component';
 import { StudentComponent } from './student/student.component';
 import { StudentService} from './services/student.service';
 import {RouterModule, Routes} from '@angular/router';
+import {AuthService} from './services/auth.service';
 
 const appRoutes: Routes = [
   { path: 'students', component: StudentViewComponent },
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes) // précise à l'appli que toutes les routes se trouvent dans cette constante appRoutes
   ],
   providers: [
-    StudentService
+    StudentService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
