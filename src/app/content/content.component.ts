@@ -21,5 +21,12 @@ export class ContentComponent implements OnInit {
   getStatus() {
     return this.status;
   }
+  getColor() {
+    if (this.status === 'disponible') {
+      return '#278b31';
+    } else if (this.status === 'occupé(e)') {
+      return 'red';
+    }
+  }
 
 }
