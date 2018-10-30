@@ -21,7 +21,10 @@
       </ul>
       <button class="btn btn-success"
               [disabled]="!isAuth"
-              (click)="onMixer()">Mixer</button>
+              (click)="onFreeAll()">Rendre disponible</button>
+      <button class="btn btn-danger"
+              [disabled]="!isAuth"
+              (click)="onBusyAll()">Rendre occupé(e)</button>
     </div>
   </div>
 </div>

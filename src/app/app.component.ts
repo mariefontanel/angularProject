@@ -1,40 +1,36 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {StudentService} from './services/student.service';
 
 @Component({
   selector: 'app-root', // nom balise html perso, doit être unique
   templateUrl: './app.component.html', // url du template
   styleUrls: ['./app.component.css'] // array des url des feuilles de style
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   // title = 'angularProject';
   isAuth = false;
 
-  students = [
-    {
-      name: 'Olivier',
-      status: 'disponible'
-    },
-    {
-      name: 'Victor',
-      status: 'occupé(e)'
-    },
-    {
-      name: 'Pauline',
-      status: 'occupé(e)'
-    }
-  ];
-/*  varOne = 'Olivier';
-  varTwo = 'Pauline';
-  varThree = 'Victor';*/
+  students: any[];
   // à la création de ce component je change le statut isAuth en true au bout de 4 sec
-  constructor() {
+  // et le paramètre du constructeur est une instance du Service
+  constructor(private studentService: StudentService) {
     setTimeout(
       () => {
         this.isAuth = true;
       }, 4000
     );
   }
-  onMixer() {
-    console.log('Mixage en cours !');
+  ngOnInit() {
+    this.students = this.studentService.students;
+  }
+  onBusyAll() {
+    if(confirm('Etes-vous sûr de vouloir rendre Occupé(e) ces étudiants ?')) {
+      this.studentService.switchBusyAll();
+    } else {
+      return null;
+    }
+  }
+  onFreeAll() {
+    this.studentService.switchFreeAll();
   }
 }

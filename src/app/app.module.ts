@@ -8,6 +8,7 @@ import { ContentComponent } from './content/content.component';
 import { AuthComponent } from './auth/auth.component';
 import { StudentViewComponent } from './student-view/student-view.component';
 import { StudentComponent } from './student/student.component';
+import { StudentService} from './services/student.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { StudentComponent } from './student/student.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    StudentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
