@@ -15,14 +15,20 @@ export class StudentService {
   ];
 
   switchFreeAll() {
-    for(let student of this.students) {
+    for (let student of this.students) {
       student.status = 'disponible';
     }
   }
-
   switchBusyAll() {
-    for(let student of this.students) {
+    for (let student of this.students) {
       student.status = 'occupé(e)';
     }
+  }
+  switchFreeOne(i: number) {
+    this.students[i].status = 'disponible';
+  }
+  switchBusyOne(i: number) {
+    alert(this.students[0]);
+    this.students[i].status = 'occupé(e)';
   }
 }

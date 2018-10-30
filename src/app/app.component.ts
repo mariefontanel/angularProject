@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     this.students = this.studentService.students;
   }
   onBusyAll() {
-    if(confirm('Etes-vous sûr de vouloir rendre Occupé(e) ces étudiants ?')) {
+    if (confirm('Etes-vous sûr de vouloir rendre occupé(e) ces étudiants ?')) {
       this.studentService.switchBusyAll();
     } else {
       return null;

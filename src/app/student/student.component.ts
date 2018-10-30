@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {StudentService} from '../services/student.service';
 
 @Component({
   selector: 'app-student',
@@ -6,20 +7,16 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-  // varTest = 'ma variable';
   // utilisation des données de l'input et on spécifie le type de données
   @Input() name: string;
   @Input() status: string;
-  // status = 'Occupé(e)';
+  @Input() index: number;
 
-  constructor() { }
+  constructor(private studentService: StudentService) { }
 
   ngOnInit() {
   }
 
-  getStatus() {
-    return this.status;
-  }
   getColor() {
     if (this.status === 'disponible') {
       return '#278b31';
@@ -27,5 +24,11 @@ export class StudentComponent implements OnInit {
       return 'red';
     }
   }
-
+  onSwitch() {
+    if (this.status === 'occupé(e)') {
+      this.studentService.switchFreeOne(this.index);
+    } else if (this.status === 'disponible') {
+      this.studentService.switchBusyOne(this.index);
+    }
+  }
 }
