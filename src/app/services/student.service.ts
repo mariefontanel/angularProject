@@ -28,7 +28,6 @@ export class StudentService {
     this.students[i].status = 'disponible';
   }
   switchBusyOne(i: number) {
-    alert(this.students[0]);
     this.students[i].status = 'occupé(e)';
   }
 }

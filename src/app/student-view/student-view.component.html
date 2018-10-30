@@ -1,0 +1,14 @@
+<div class="col-xs-12">
+  <ul class="list-group">
+    <app-student *ngFor="let student of students; let i = index"
+                 [name]="student.name"
+                 [status]="student.status"
+                 [index]="i"></app-student>
+  </ul>
+  <button class="btn btn-success"
+          [disabled]="!isAuth"
+          (click)="onFreeAll()">Rendre tous disponibles</button>
+  <button class="btn btn-danger"
+          [disabled]="!isAuth"
+          (click)="onBusyAll()">Rendre tous occupé(e)s</button>
+</div>

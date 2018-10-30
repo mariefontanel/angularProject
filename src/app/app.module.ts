@@ -9,6 +9,13 @@ import { AuthComponent } from './auth/auth.component';
 import { StudentViewComponent } from './student-view/student-view.component';
 import { StudentComponent } from './student/student.component';
 import { StudentService} from './services/student.service';
+import {RouterModule, Routes} from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'students', component: StudentViewComponent },
+  { path: 'auth', component: AuthComponent },
+  { path: '', component: StudentViewComponent }
+]
 
 @NgModule({
   declarations: [
@@ -21,7 +28,8 @@ import { StudentService} from './services/student.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes) // précise à l'appli que toutes les routes se trouvent dans cette constante appRoutes
   ],
   providers: [
     StudentService
