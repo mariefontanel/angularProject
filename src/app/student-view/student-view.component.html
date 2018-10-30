@@ -1,9 +1,11 @@
 <div class="col-xs-12">
+  <h2>Les étudiants</h2>
   <ul class="list-group">
     <app-student *ngFor="let student of students; let i = index"
                  [name]="student.name"
                  [status]="student.status"
-                 [index]="i"></app-student>
+                 [index]="i"
+                 [id]="student.id"></app-student>
   </ul>
   <button class="btn btn-success"
           [disabled]="!isAuth"

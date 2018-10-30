@@ -11,9 +11,11 @@ import { StudentComponent } from './student/student.component';
 import { StudentService} from './services/student.service';
 import {RouterModule, Routes} from '@angular/router';
 import {AuthService} from './services/auth.service';
+import { SingleStudentComponent } from './single-student/single-student.component';
 
 const appRoutes: Routes = [
   { path: 'students', component: StudentViewComponent },
+  { path: 'students/:id', component: SingleStudentComponent },
   { path: 'auth', component: AuthComponent },
   { path: '', component: StudentViewComponent }
 ]
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     ContentComponent,
     AuthComponent,
     StudentViewComponent,
-    StudentComponent
+    StudentComponent,
+    SingleStudentComponent
   ],
   imports: [
     BrowserModule,

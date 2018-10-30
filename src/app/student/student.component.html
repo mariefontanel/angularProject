@@ -3,7 +3,7 @@
 'list-group-item-danger': status === 'occupé(e)'}">
 
   <h4 [ngStyle]="{color: getColor()}">{{ name }} est {{ status }}</h4>
-
+  <a [routerLink]="[id]">Détails</a>
   <button class="btn btn-sm btn-success"
           *ngIf="status === 'occupé(e)'"
           (click)="onSwitch()">Rendre Dispo</button>

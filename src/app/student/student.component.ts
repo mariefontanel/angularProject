@@ -11,6 +11,7 @@ export class StudentComponent implements OnInit {
   @Input() name: string;
   @Input() status: string;
   @Input() index: number;
+  @Input() id: number;
 
   constructor(private studentService: StudentService) { }
 
