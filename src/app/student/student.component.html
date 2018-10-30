@@ -1,0 +1,13 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': status === 'disponible',
+'list-group-item-danger': status === 'occupé(e)'}">
+
+  <div style="width:20px;height:20px;background-color: red;"
+       *ngIf="status === 'occupé(e)'"></div>
+  <div style="width:20px;height:20px;background-color: #278b31;"
+       *ngIf="status === 'disponible'"></div>
+
+  <h4 [ngStyle]="{color: getColor()}">{{ name }} est {{ status }}</h4>
+
+  <input type="text" class="form-control" [(ngModel)]="name">
+</li>
