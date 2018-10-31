@@ -1,4 +1,4 @@
 export class User {
-  constructor(public firstName: string, public lastName: string, public email: string, public status: string) {
+  constructor(public firstName: string, public lastName: string, public email: string) {
   }
 }

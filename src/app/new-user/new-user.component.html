@@ -1,0 +1,17 @@
+<div class="col-sm-8 col-sm-offset2">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+    <div class="form-group">
+      <label for="lastName">Prénom</label>
+      <input type="text" class="form-control" id="lastName" formControlName="lastName">
+    </div>
+    <div class="form-group">
+      <label for="firstName">Nom</label>
+      <input type="text" class="form-control" id="firstName" formControlName="firstName">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" formControlName="email">
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Soumettre</button>
+  </form>
+</div>
