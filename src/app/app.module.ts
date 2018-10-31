@@ -13,10 +13,11 @@ import {RouterModule, Routes} from '@angular/router';
 import {AuthService} from './services/auth.service';
 import { SingleStudentComponent } from './single-student/single-student.component';
 import { ForOhFourComponent } from './for-oh-four/for-oh-four.component';
+import {AuthGuard} from './services/auth-guard.service';
 
 const appRoutes: Routes = [
-  { path: 'students', component: StudentViewComponent },
-  { path: 'students/:id', component: SingleStudentComponent },
+  { path: 'students', canActivate: [AuthGuard], component: StudentViewComponent },
+  { path: 'students/:id', canActivate: [AuthGuard], component: SingleStudentComponent },
   { path: 'auth', component: AuthComponent },
   { path: '', component: StudentViewComponent },
   { path: 'not-found', component: ForOhFourComponent },
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     StudentService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
