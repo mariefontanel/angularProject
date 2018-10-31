@@ -8,6 +8,8 @@ import {NgForm} from '@angular/forms';
 })
 export class EditStudentComponent implements OnInit {
 
+  defaultOnDisponible = 'disponible';
+
   constructor() { }
 
   ngOnInit() {
