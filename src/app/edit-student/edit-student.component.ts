@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {StudentService} from '../services/student.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit-student',
@@ -10,12 +12,16 @@ export class EditStudentComponent implements OnInit {
 
   defaultOnDisponible = 'disponible';
 
-  constructor() { }
+  constructor(private studentService: StudentService, private router: Router) {
+  }
 
   ngOnInit() {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    const name = form.value['name'];
+    const status = form.value['status'];
+    this.studentService.addStudent(name, status);
+    this.router.navigate(['/students']);
   }
 }

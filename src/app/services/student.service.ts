@@ -42,4 +42,16 @@ export class StudentService {
   switchBusyOne(i: number) {
     this.students[i].status = 'occupé(e)';
   }
+  addStudent(name: string, status: string) {
+    const studentObject = {
+      id: 0,
+      name: '',
+      status: ''
+    };
+    studentObject.name = name;
+    studentObject.status = status;
+    studentObject.id = this.students[(this.students.length - 1)].id + 1;
+
+    this.students.push(studentObject);
+  }
 }
