@@ -14,10 +14,12 @@ import {AuthService} from './services/auth.service';
 import { SingleStudentComponent } from './single-student/single-student.component';
 import { ForOhFourComponent } from './for-oh-four/for-oh-four.component';
 import {AuthGuard} from './services/auth-guard.service';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 const appRoutes: Routes = [
   { path: 'students', canActivate: [AuthGuard], component: StudentViewComponent },
   { path: 'students/:id', canActivate: [AuthGuard], component: SingleStudentComponent },
+  { path: 'edit', canActivate: [AuthGuard], component: EditStudentComponent },
   { path: 'auth', component: AuthComponent },
   { path: '', component: StudentViewComponent },
   { path: 'not-found', component: ForOhFourComponent },
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     StudentViewComponent,
     StudentComponent,
     SingleStudentComponent,
-    ForOhFourComponent
+    ForOhFourComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,
