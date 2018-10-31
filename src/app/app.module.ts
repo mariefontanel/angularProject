@@ -12,12 +12,15 @@ import { StudentService} from './services/student.service';
 import {RouterModule, Routes} from '@angular/router';
 import {AuthService} from './services/auth.service';
 import { SingleStudentComponent } from './single-student/single-student.component';
+import { ForOhFourComponent } from './for-oh-four/for-oh-four.component';
 
 const appRoutes: Routes = [
   { path: 'students', component: StudentViewComponent },
   { path: 'students/:id', component: SingleStudentComponent },
   { path: 'auth', component: AuthComponent },
-  { path: '', component: StudentViewComponent }
+  { path: '', component: StudentViewComponent },
+  { path: 'not-found', component: ForOhFourComponent },
+  { path: '**', redirectTo: '/not-found'}
 ]
 
 @NgModule({
@@ -27,7 +30,8 @@ const appRoutes: Routes = [
     AuthComponent,
     StudentViewComponent,
     StudentComponent,
-    SingleStudentComponent
+    SingleStudentComponent,
+    ForOhFourComponent
   ],
   imports: [
     BrowserModule,
