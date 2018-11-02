@@ -32,4 +32,7 @@ export class StudentComponent implements OnInit {
       this.studentService.switchBusyOne(this.index);
     }
   }
+  onDelete() {
+    this.studentService.removeOneStudent(this.index);
+  }
 }

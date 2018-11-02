@@ -14,6 +14,26 @@ export class StudentService {
       id: 3,
       name: 'Pauline',
       status: 'occupé(e)'
+    },
+    {
+      id: 4,
+      name: 'Marcelline',
+      status: 'disponible'
+    },
+    {
+      id: 5,
+      name: 'Rémi',
+      status: 'occupé(e)'
+    },
+    {
+      id: 6,
+      name: 'Michaël',
+      status: 'disponible'
+    },
+    {
+      id: 7,
+      name: 'Damien',
+      status: 'occupé(e)'
     }
   ];
 
@@ -53,5 +73,8 @@ export class StudentService {
     studentObject.id = this.students[(this.students.length - 1)].id + 1;
 
     this.students.push(studentObject);
+  }
+  removeOneStudent(i: number) {
+    this.students.splice(i, 1);
   }
 }

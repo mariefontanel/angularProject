@@ -1,13 +1,15 @@
 <li [ngClass]="{'list-group-item': true,
 'list-group-item-success': status === 'disponible',
-'list-group-item-danger': status === 'occupé(e)'}">
+'list-group-item-warning': status === 'occupé(e)'}">
 
   <h4 [ngStyle]="{color: getColor()}">{{ name }} est {{ status }}</h4>
-  <a [routerLink]="[id]">Détails</a>
+  <button class="btn btn-sm btn-primary" [routerLink]="[id]">Détails</button>
   <button class="btn btn-sm btn-success"
           *ngIf="status === 'occupé(e)'"
           (click)="onSwitch()">Rendre Dispo</button>
-  <button class="btn btn-sm btn-danger"
+  <button class="btn btn-sm btn-warning"
           *ngIf="status === 'disponible'"
           (click)="onSwitch()">Rendre Occupé(e)</button>
+  <button class="btn btn-sm btn-danger"
+          (click)="onDelete()">Supprimer</button>
 </li>
